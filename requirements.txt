@@ -1,0 +1,5 @@
+flask
+pandas
+pytest
+github3.py
+psutil
