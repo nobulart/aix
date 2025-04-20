@@ -1,5 +1,6 @@
 from flask import Flask, jsonify
 import pandas as pd
+import os
 from pathlib import Path
 app = Flask(__name__)
 
@@ -18,4 +19,4 @@ def data():
 
 
 if __name__ == '__main__':
-    app.run()
+    app.run(port=int(os.getenv('FLASK_PORT', 5000)))
