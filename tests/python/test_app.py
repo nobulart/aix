@@ -1,7 +1,7 @@
 from flask import Flask
 import pytest
 from pathlib import Path
-from ..app import app
+from app import app
 
 
 @pytest.fixture
