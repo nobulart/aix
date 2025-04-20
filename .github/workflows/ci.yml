@@ -9,13 +9,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
-    - name: Set up Python
-      uses: actions/setup-python@v4
+    - name: Set up Node.js
+      uses: actions/setup-node@v3
       with:
-        python-version: "3.13"
+        node-version: '16'
     - name: Install dependencies
-      run: |
-        pip install -r requirements.txt
+      run: npm install
     - name: Run tests
-      run: |
-        pytest tests/python --verbose
+      run: npm test
