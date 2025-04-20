@@ -9,13 +9,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
-    - name: Set up Julia
-      uses: julia-actions/setup-julia@v1
+    - name: Set up Python
+      uses: actions/setup-python@v4
       with:
-        version: "1.11"
+        python-version: "3.13"
     - name: Install dependencies
       run: |
-        julia --project=. -e "using Pkg; Pkg.instantiate()"
+        pip install -r requirements.txt
     - name: Run tests
       run: |
-        julia --project=. -e "cd(\"tests/julia\"); include(\"test_app.jl\")"
+        pytest tests/python --verbose
